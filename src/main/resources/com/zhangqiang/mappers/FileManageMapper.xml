@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhangqiang.dao.FileManageDao">
+
+	<resultMap type="FileManage" id="FileManageResult">
+		<result property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="beizhu" column="beizhu"/>
+		<result property="dizhi" column="dizhi"/>
+		<result property="xzl" column="xzl"/>
+	</resultMap>
+	
+	<insert id="add" parameterType="FileManage">
+		insert into t_file values(null,#{name},#{beizhu},#{dizhi},#{xzl})
+	</insert>
+	
+	
+	<update id="update" parameterType="FileManage">
+		update t_file
+		<set>
+			<if test="xzl!=null">
+				xzl=#{xzl},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+	
+	<select id="list" parameterType="Map" resultMap="FileManageResult">
+		select * from t_file
+		order by xzl 
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+	
+	<select id="getTotal" parameterType="Map" resultType="Long">
+		select count(*) from t_file
+	</select>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from t_file where id=#{id}
+	</delete>
+	
+	<!-- 前台分页查询 -->
+	<!-- 查询单条记录 -->
+	<select id="selectFileManageById" parameterType="int" resultMap="FileManageResult">
+		SELECT * FROM t_file WHERE id = #{userId}
+	</select>
+	<select id="selectFileManageByFileManageName" parameterType="java.lang.String" resultMap="FileManageResult">
+		SELECT *
+		FROM t_file
+		WHERE 1 = 1
+		<if test="userName != null and userName !=''">
+		  
+		    
+		  AND name     LIKE '%${userName}%' 
+		    
+		</if>
+		ORDER BY id
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	</mapper>
