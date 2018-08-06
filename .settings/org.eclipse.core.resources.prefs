@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/zhangqiang/controller/BaseController.java=UTF-8
+encoding//src/main/java/com/zhangqiang/dao/FileManageDao.java=UTF-8
+encoding//src/main/java/com/zhangqiang/dao/UserDao.java=UTF-8
+encoding//src/main/java/com/zhangqiang/entity/BaseEntity.java=UTF-8
+encoding//src/main/java/com/zhangqiang/service/FileManageService.java=UTF-8
+encoding//src/main/java/com/zhangqiang/service/UserService.java=UTF-8
+encoding//src/main/java/com/zhangqiang/service/impl/FileManageServiceImpl.java=UTF-8
+encoding//src/main/java/com/zhangqiang/service/impl/UserServiceImpl.java=UTF-8
+encoding//src/main/java/com/zhangqiang/util=UTF-8
+encoding//src/main/java/com/zhangqiang/util/CryptographyUtil.java=GBK
+encoding//src/main/java/com/zhangqiang/util/DateUtil.java=GBK
+encoding//src/main/java/com/zhangqiang/util/PageUtil.java=GBK
+encoding//src/main/java/com/zhangqiang/util/StringUtil.java=GBK
